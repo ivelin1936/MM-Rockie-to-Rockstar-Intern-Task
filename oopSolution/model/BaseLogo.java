@@ -21,7 +21,7 @@ public abstract class BaseLogo {
     private void setFontWeight(int fontWeight) {
         if (fontWeight <= MIN_FONT_WEIGHT
                 || fontWeight >= MAX_FONT_WEIGHT
-                || fontWeight % 2 == 0) {
+                || isEvenNumber(fontWeight)) {
             throw new InvalidParameterException(DEFAULT_INVALID_PARAMETER_EX_MSG);
         }
 
@@ -30,5 +30,9 @@ public abstract class BaseLogo {
 
     protected String drawSequence(String element, int count) {
         return new String(new char[count]).replace("\0", element);
+    }
+
+    private boolean isEvenNumber(int num) {
+        return num % 2 == 0;
     }
 }

@@ -8,6 +8,7 @@ public class Logo extends BaseLogo implements Drawable {
     private static final String DRAW_PATTERN_SECOND_PART = "%s%s%s%s%s%s%s";
     private static final int DEFAULT_SYMBOL_REPEAT = 2;
     private static final int TWO_HALVES = 2;
+    private static final int ZERO_ROW = 1;
 
     private int fontSize;
 
@@ -17,7 +18,7 @@ public class Logo extends BaseLogo implements Drawable {
     }
 
     private void setFontSize(int inputParameter) {
-        this.fontSize = inputParameter + 1;
+        this.fontSize = inputParameter + ZERO_ROW;
     }
 
     @Override
