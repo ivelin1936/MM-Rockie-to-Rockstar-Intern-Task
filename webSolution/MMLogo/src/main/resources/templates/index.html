@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>MM Logo</title>
+</head>
+
+<body>
+<div class="container-fluid">
+    <header>
+        <h1>MM Logo Creator</h1>
+    </header>
+
+    <main class="mt-0">
+        <form th:action="@{/draw}" th:method="post">
+            <label th:for="inputFontWeight">Font Weight</label>
+            <input th:type="number" th:name="fontWeight" th:id="inputFontWeight"
+                   onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+            <input type="submit">
+            <p><small style="color: red" th:id="fontWeightHelp" th:if="${error}" th:text="${error}"></small></p>
+        </form>
+    </main>
+
+
+    <footer class="nb-footer">
+        <p>Created by IKD studio</p>
+    </footer>
+</div>
+
+</body>
+</html>
