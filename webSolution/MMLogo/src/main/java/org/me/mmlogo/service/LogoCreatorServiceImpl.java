@@ -1,7 +1,6 @@
 package org.me.mmlogo.service;
 
 import org.me.mmlogo.domain.model.Logo;
-import org.me.mmlogo.utils.DrawUtils;
 import org.me.mmlogo.validators.service.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -65,11 +64,11 @@ public class LogoCreatorServiceImpl implements LogoCreatorService {
         for (int j = 1; j <= DEFAULT_SYMBOL_REPEAT; j++) {
             logoBuilder.append(
                     String.format(DRAW_PATTERN_FIRST_PART,
-                            DrawUtils.drawSequence(DEFAULT_SPACE, sideSpace),
-                            DrawUtils.drawSequence(DEFAULT_LETTER_SYMBOL, starsCount),
-                            DrawUtils.drawSequence(DEFAULT_SPACE, centerSpace),
-                            DrawUtils.drawSequence(DEFAULT_LETTER_SYMBOL, starsCount),
-                            DrawUtils.drawSequence(DEFAULT_SPACE, sideSpace)));
+                            DEFAULT_SPACE.repeat(sideSpace),
+                            DEFAULT_LETTER_SYMBOL.repeat(starsCount),
+                            DEFAULT_SPACE.repeat(centerSpace),
+                            DEFAULT_LETTER_SYMBOL.repeat(starsCount),
+                            DEFAULT_SPACE.repeat(sideSpace)));
         }
         logoBuilder.append(System.lineSeparator());
     }
@@ -94,13 +93,13 @@ public class LogoCreatorServiceImpl implements LogoCreatorService {
         for (int j = 1; j <= DEFAULT_SYMBOL_REPEAT; j++) {
             logoBuilder.append(
                     String.format(DRAW_PATTERN_SECOND_PART,
-                            DrawUtils.drawSequence(DEFAULT_SPACE, sideSpace),
-                            DrawUtils.drawSequence(DEFAULT_LETTER_SYMBOL, fontWeight),
-                            DrawUtils.drawSequence(DEFAULT_SPACE, centerSpace),
-                            DrawUtils.drawSequence(DEFAULT_LETTER_SYMBOL, centerStarsCount),
-                            DrawUtils.drawSequence(DEFAULT_SPACE, centerSpace),
-                            DrawUtils.drawSequence(DEFAULT_LETTER_SYMBOL, fontWeight),
-                            DrawUtils.drawSequence(DEFAULT_SPACE, sideSpace)));
+                            DEFAULT_SPACE.repeat(sideSpace),
+                            DEFAULT_LETTER_SYMBOL.repeat(fontWeight),
+                            DEFAULT_SPACE.repeat(centerSpace),
+                            DEFAULT_LETTER_SYMBOL.repeat(centerStarsCount),
+                            DEFAULT_SPACE.repeat(centerSpace),
+                            DEFAULT_LETTER_SYMBOL.repeat(fontWeight),
+                            DEFAULT_SPACE.repeat(sideSpace)));
         }
         logoBuilder.append(System.lineSeparator());
     }

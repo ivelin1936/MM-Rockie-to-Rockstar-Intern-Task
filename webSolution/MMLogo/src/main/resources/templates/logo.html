@@ -15,7 +15,7 @@
             <label th:for="inputFontWeight">Font Weight</label>
             <input th:type="number" th:name="fontWeight" th:id="inputFontWeight"
                    onkeypress="return event.charCode >= 48 && event.charCode <= 57">
-            <input type="submit">
+            <input type="submit" th:value="Generate">
             <p><small style="color: red" th:id="fontWeightHelp" th:if="${error}" th:text="${error}"></small></p>
         </form>
         <br>

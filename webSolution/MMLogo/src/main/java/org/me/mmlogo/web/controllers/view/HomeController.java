@@ -34,7 +34,6 @@ public class HomeController {
             String result = this.logoService.create(fontWeight);
             modelAndView.addObject(LOGO, result);
             modelAndView.setViewName("logo");
-            System.out.println(result);
         } catch (Exception ex) {
             modelAndView.addObject(ERROR, ex.getMessage());
             modelAndView.setViewName("index");
